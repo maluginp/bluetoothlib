@@ -1,5 +1,7 @@
 package ru.maluginp.bt.lib
 
-class MacAddress {
-
+class MacAddress(val mac: String) {
+    fun asValue(): String {
+        return mac
+    }
 }

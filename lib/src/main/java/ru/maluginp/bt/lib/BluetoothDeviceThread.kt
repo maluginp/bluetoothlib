@@ -2,9 +2,8 @@ package ru.maluginp.bt.lib
 
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
-import java.io.OutputStream
 
-class BluetoothDeviceThread(val inputStream: InputStream, val outputStream: OutputStream) : Thread() {
+class BluetoothDeviceThread(private val inputStream: InputStream, private val delay: Long = 500) : Thread() {
     private var stop: Boolean = false
 
     override fun run() {
@@ -35,7 +34,7 @@ class BluetoothDeviceThread(val inputStream: InputStream, val outputStream: Outp
                         byteBuffer = ByteArrayOutputStream()
                     }
                 }
-                sleep(500)
+                sleep(delay)
             } catch (e: Exception) {
 //                e.printStackTrace()
 //                logger.e(e, "BT ConnectionThread: Failed read data from socket")

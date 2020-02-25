@@ -1,9 +1,13 @@
 package ru.maluginp.bt.lib
 
-class BluetoothDevice(val macAddress: MacAddress) : Device {
+import android.bluetooth.BluetoothAdapter
+
+class BluetoothDevice(private val btAdapter: BluetoothAdapter, private val macAddress: MacAddress) : Device {
+
+
 
     override fun connect() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        // TODO: Add
     }
 
     override fun disconnect() {
